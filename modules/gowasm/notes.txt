@@ -1,0 +1,8 @@
+tinygo build -target wasm -panic trap -wasm-abi generic -ldflags="-z stack-size=2048 --max-memory=65536" -o app.wasm wasm.go
+
+# Optimize (optional)
+wasm-opt -Os app.wasm -o app.wasm
+wasm-strip app.wasm
+
+
+tinygo build -target wasm -panic trap -wasm-abi generic -opt=z -o app.wasm wasm.go

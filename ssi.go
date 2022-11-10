@@ -45,5 +45,5 @@ func main() {
 	router.StaticFile("/module", "./runner.wasm")
 	router.GET("/job/:id", job)
 	router.GET("/solve/:solution", solve)
-	router.Run("localhost:8080")
+	router.Run("0.0.0.0:80")
 }
